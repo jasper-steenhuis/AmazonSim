@@ -1,5 +1,7 @@
 package com.nhlstenden.amazonsimulatie.models;
 
+import com.nhlstenden.amazonsimulatie.base.Tile;
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.*;
@@ -21,6 +23,7 @@ public class World implements Model {
     private List<Object3D> worldObjects;
     private List<Robot> robots;
     private List<Stelling> stellingList;
+    private List<Tile> tiles;
     /*
      * Dit onderdeel is nodig om veranderingen in het model te kunnen doorgeven aan de controller.
      * Het systeem werkt al as-is, dus dit hoeft niet aangepast te worden.
@@ -33,17 +36,28 @@ public class World implements Model {
      */
     public World() {
         this.worldObjects = new ArrayList<>();
+        this.robots = new ArrayList<>();
+        this.stellingList = new ArrayList<>();
+        this.tiles = new ArrayList<>();
+
+        tiles = CreateTiles();
+
 
 
         for(int i = 0; i < 6; i++) {
             // Robot
             Robot robot = new Robot();
             this.worldObjects.add(robot);
-            robots.add(robot);
+            this.robots.add(robot);
             // Stelling
             com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling();
             this.worldObjects.add(stelling);
-            stellingList.add(stelling);
+            this.stellingList.add(stelling);
+
+
+        }
+        for(Robot r : robots){
+            r.GoToDestination(tiles.get(30).getX(),tiles.get(30).getY());
         }
     }
 
@@ -89,5 +103,17 @@ public class World implements Model {
 
         return returnList;
     }
-    
+
+    /*
+     *  This method creates tiles for the robots and racks to ride and stand on.
+     */
+    public List<Tile> CreateTiles(){
+        List<Tile> tiles = new ArrayList<>();
+        for(int i = 0; i<50; i++){
+            tiles.add(new Tile(i,i));
+        }
+        return tiles;
+
+
+    }
 }

@@ -51,8 +51,10 @@ public class Robot implements Object3D, Updatable {
         }
 
 
-    public void GoToDestination(int position) {
-        this.destination = position;
+    public void GoToDestination(double destX,double destY) {
+        this.x = destX;
+        this.z =destY;
+
     }
     public void SetNextPosition(int position){
         this.currentPosition = position;
