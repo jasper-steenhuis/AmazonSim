@@ -56,6 +56,12 @@ public class SimulationController extends Controller {
             public void execute() {
                 t.removeView(view);
             }
+
+            @Override
+            public String getName() {
+                return null;
+            }
+
         });
 
         /*
