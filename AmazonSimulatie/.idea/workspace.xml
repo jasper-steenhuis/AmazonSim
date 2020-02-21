@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0079b826-9aab-4e61-ae9d-f6ab33265b40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/CommandCentre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Idle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/SimulationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Object3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Object3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/ProxyObject3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/ProxyObject3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Stelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Stelling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Vrachtwagen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/World.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Xw1cV3aZT6iZKwNPDaIpzOlC1P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="AmazonSimulatie" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nhlstenden.amazonsimulatie.base.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0079b826-9aab-4e61-ae9d-f6ab33265b40" name="Default Changelist" comment="" />
+      <created>1581942423060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581942423060</updated>
+      <workItem from="1581942424809" duration="2730000" />
+      <workItem from="1581976326255" duration="5046000" />
+      <workItem from="1582027440938" duration="9977000" />
+      <workItem from="1582193523353" duration="203000" />
+      <workItem from="1582200364131" duration="8656000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="773" y="292" key="#com.intellij.ide.util.MemberChooser" timestamp="1582208904708">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="773" y="292" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1106@0.23.1920.1106" timestamp="1582208904708" />
+    <state x="719" y="468" width="483" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1582208326801">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="719" y="468" width="483" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1920.1106@0.23.1920.1106" timestamp="1582208326801" />
+    <state x="698" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582203776422">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="698" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1106@0.23.1920.1106" timestamp="1582203776422" />
+    <state width="1878" height="377" key="GridCell.Tab.0.bottom" timestamp="1582209771203">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.0.bottom/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771203" />
+    <state width="1878" height="377" key="GridCell.Tab.0.center" timestamp="1582209771203">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.0.center/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771203" />
+    <state width="1878" height="377" key="GridCell.Tab.0.left" timestamp="1582209771202">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.0.left/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771202" />
+    <state width="1878" height="377" key="GridCell.Tab.0.right" timestamp="1582209771203">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.0.right/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771203" />
+    <state width="1878" height="377" key="GridCell.Tab.1.bottom" timestamp="1582209771205">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.1.bottom/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771205" />
+    <state width="1878" height="377" key="GridCell.Tab.1.center" timestamp="1582209771204">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.1.center/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771204" />
+    <state width="1878" height="377" key="GridCell.Tab.1.left" timestamp="1582209771204">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.1.left/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771204" />
+    <state width="1878" height="377" key="GridCell.Tab.1.right" timestamp="1582209771205">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="1878" height="377" key="GridCell.Tab.1.right/0.23.1920.1106@0.23.1920.1106" timestamp="1582209771205" />
+    <state x="469" y="215" key="SettingsEditor" timestamp="1581980528618">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="469" y="215" key="SettingsEditor/0.23.1920.1106@0.23.1920.1106" timestamp="1581980528618" />
+    <state x="653" y="408" key="com.intellij.ide.util.TipDialog" timestamp="1582200387215">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="653" y="408" key="com.intellij.ide.util.TipDialog/0.23.1920.1106@0.23.1920.1106" timestamp="1582200387215" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1582209568695">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.23.1920.1106@0.23.1920.1106" timestamp="1582209568695" />
+    <state x="625" y="268" width="670" height="675" key="run.anything.popup" timestamp="1581942850977">
+      <screen x="0" y="23" width="1920" height="1106" />
+    </state>
+    <state x="625" y="268" width="670" height="675" key="run.anything.popup/0.23.1920.1106@0.23.1920.1106" timestamp="1581942850977" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Robot.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

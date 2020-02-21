@@ -1,5 +1,8 @@
 package com.nhlstenden.amazonsimulatie.models;
 
+import com.nhlstenden.amazonsimulatie.base.Command;
+import com.nhlstenden.amazonsimulatie.base.Move;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -11,72 +14,29 @@ import java.util.UUID;
 public class Robot implements Object3D, Updatable {
     private UUID uuid;
 
-    private double x = 0;
+    public double x = 0;
     private double y = 0.01;
-    private double z = 0;
+    public double z = 0;
 
     public int currentPosition = 1;
     public int destination;
 
+    public double destinationX;
+    public double destinationZ;
 
-
+    private Move move = new Move(x,z,destinationX,destinationZ);
 
     private double rotationX = 0;
     private double rotationY = 0;
     private double rotationZ = 0;
 
+
+
     public Robot() {
         this.uuid = UUID.randomUUID();
-    }
-
-
-
-    public void MoveTo() {
-
-
-            if (this.x < x){
-                this.x += 0.1;
-            }
-            if (this.z < z){
-                this.z += 0.1;
-            }
-
-            if (this.x > x){
-                this.x -= 0.1;
-            }
-            if (this.z > z){
-                this.z -= 0.1;
-            }
-
-        }
-
-
-    public void GoToDestination(double destX,double destY) {
-        this.x = destX;
-        this.z =destY;
-
-    }
-    public void SetNextPosition(int position){
-        this.currentPosition = position;
-    }
-    public int GetRandomStartPosition(){
-        int[] nums = {101,201,301,401};
-        Random r = new Random();
-        int randomNumber = r.nextInt(nums.length);
-        System.out.println(nums[randomNumber]);
-        return nums[randomNumber];
-    }
-    public void SetPosition(int position) {
-        this.destination = position;
 
     }
 
-    public int GetPosition(){
-        return this.currentPosition;
-    }
-    public int GetDestination(){
-        return this.destination;
-    }
     /*
      * Deze update methode wordt door de World aangeroepen wanneer de
      * World zelf geupdate wordt. Dit betekent dat elk object, ook deze
@@ -92,7 +52,7 @@ public class Robot implements Object3D, Updatable {
      */
     @Override
     public boolean update() {
-        this.MoveTo();
+        move.execute();
         return true;
     }
 
@@ -140,5 +100,20 @@ public class Robot implements Object3D, Updatable {
     @Override
     public double getRotationZ() {
         return this.rotationZ;
+    }
+
+
+    public double SetDestinationX(double x){
+        return destinationX = x;
+    }
+    public double SetDestinationZ(double z){
+        return destinationZ = z;
+    }
+
+    public double getDestinationX() {
+        return destinationX;
+    }
+    public double getDestinationZ(){
+        return destinationZ;
     }
 }

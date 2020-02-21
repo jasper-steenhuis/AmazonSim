@@ -6,4 +6,5 @@ package com.nhlstenden.amazonsimulatie.base;
  */
 public interface Command {
     void execute();
+    String getName();
 }

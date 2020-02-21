@@ -1,15 +1,15 @@
 package com.nhlstenden.amazonsimulatie.base;
 
 public class Tile {
-    private double x,y;
-    public int position;
-    public Tile(double x, double y ){
+    private double x,z;
+
+    public Tile(double x, double z ){
         this.x = x;
-        this.y = y;
+        this.z = z;
     }
 
-    public double getY() {
-        return y;
+    public double getZ() {
+        return z;
     }
 
     public double getX() {

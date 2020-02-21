@@ -1,5 +1,7 @@
 package com.nhlstenden.amazonsimulatie.models;
 
+import com.nhlstenden.amazonsimulatie.base.Idle;
+import com.nhlstenden.amazonsimulatie.base.Move;
 import com.nhlstenden.amazonsimulatie.base.Tile;
 
 import java.beans.PropertyChangeListener;
@@ -30,6 +32,8 @@ public class World implements Model {
      */
     PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
+    private Idle idle;
+
     /*
      * De wereld maakt een lege lijst voor worldObjects aan. Daarin wordt nu één robot gestopt.
      * Deze methode moet uitgebreid worden zodat alle objecten van de 3D wereld hier worden gemaakt.
@@ -41,24 +45,23 @@ public class World implements Model {
         this.tiles = new ArrayList<>();
 
         tiles = CreateTiles();
-
-
-
         for(int i = 0; i < 6; i++) {
             // Robot
             Robot robot = new Robot();
             this.worldObjects.add(robot);
             this.robots.add(robot);
+            robots.get(i).destinationZ = 50;
+
             // Stelling
             com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling();
             this.worldObjects.add(stelling);
             this.stellingList.add(stelling);
 
 
+
         }
-        for(Robot r : robots){
-            r.GoToDestination(tiles.get(30).getX(),tiles.get(30).getY());
-        }
+
+
     }
 
     /*
@@ -113,7 +116,11 @@ public class World implements Model {
             tiles.add(new Tile(i,i));
         }
         return tiles;
-
-
+    }
+    public void TestDestination(){
+        for(Robot r : robots){
+            r.SetDestinationX(10);
+            r.SetDestinationZ(10);
+        }
     }
 }
