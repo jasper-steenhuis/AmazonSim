@@ -1,7 +1,7 @@
 package com.nhlstenden.amazonsimulatie.models;
 
+import com.nhlstenden.amazonsimulatie.base.Grid;
 import com.nhlstenden.amazonsimulatie.base.Idle;
-import com.nhlstenden.amazonsimulatie.base.Move;
 import com.nhlstenden.amazonsimulatie.base.Tile;
 
 import java.beans.PropertyChangeListener;
@@ -42,22 +42,20 @@ public class World implements Model {
         this.worldObjects = new ArrayList<>();
         this.robots = new ArrayList<>();
         this.stellingList = new ArrayList<>();
-        this.tiles = new ArrayList<>();
-
-        tiles = CreateTiles();
+        Grid grid = new Grid();
         for(int i = 0; i < 6; i++) {
             // Robot
             Robot robot = new Robot();
             this.worldObjects.add(robot);
             this.robots.add(robot);
-            robots.get(i).destinationZ = 50;
 
             // Stelling
             com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling();
             this.worldObjects.add(stelling);
             this.stellingList.add(stelling);
 
-
+            robots.get(i).SetDestinationX(grid.positions.get(10).getX());
+            robots.get(i).SetDestinationZ(grid.positions.get(3).getZ());
 
         }
 
@@ -116,11 +114,5 @@ public class World implements Model {
             tiles.add(new Tile(i,i));
         }
         return tiles;
-    }
-    public void TestDestination(){
-        for(Robot r : robots){
-            r.SetDestinationX(10);
-            r.SetDestinationZ(10);
-        }
     }
 }

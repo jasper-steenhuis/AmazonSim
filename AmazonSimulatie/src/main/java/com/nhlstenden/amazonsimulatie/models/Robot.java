@@ -1,9 +1,6 @@
 package com.nhlstenden.amazonsimulatie.models;
 
-import com.nhlstenden.amazonsimulatie.base.Command;
-import com.nhlstenden.amazonsimulatie.base.Move;
 
-import java.util.Random;
 import java.util.UUID;
 
 /*
@@ -21,10 +18,10 @@ public class Robot implements Object3D, Updatable {
     public int currentPosition = 1;
     public int destination;
 
-    public double destinationX;
-    public double destinationZ;
+    public double destinationX = 0;
+    public double destinationZ = 0;
 
-    private Move move = new Move(x,z,destinationX,destinationZ);
+
 
     private double rotationX = 0;
     private double rotationY = 0;
@@ -52,7 +49,7 @@ public class Robot implements Object3D, Updatable {
      */
     @Override
     public boolean update() {
-        move.execute();
+        MoveToPosition(destinationX,destinationZ);
         return true;
     }
 
@@ -70,6 +67,21 @@ public class Robot implements Object3D, Updatable {
          * javascript code wordt dit dan weer verder afgehandeld.
          */
         return Robot.class.getSimpleName().toLowerCase();
+    }
+
+    public void MoveToPosition(double destinationX, double destinationZ){
+        if(x < (destinationX * 3) - 1.5){
+            x += 0.1;
+        }
+        if(z < (destinationZ * 3) - 1.5){
+            z += 0.1;
+        }
+        if(x > (destinationX * 3) - 1.5){
+            x -= 0.1;
+        }
+        if(z > (destinationX * 3) - 1.5){
+            z -= 0.1;
+        }
     }
 
     @Override
