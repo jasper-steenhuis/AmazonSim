@@ -42,10 +42,11 @@ public class World implements Model {
         this.worldObjects = new ArrayList<>();
         this.robots = new ArrayList<>();
         this.stellingList = new ArrayList<>();
-        Grid grid = new Grid();
+        com.nhlstenden.amazonsimulatie.base.Map map = new com.nhlstenden.amazonsimulatie.base.Map();
         for(int i = 0; i < 6; i++) {
             // Robot
-            Robot robot = new Robot();
+            Robot robot = new Robot(map);
+            robot.SetMap(map);
             this.worldObjects.add(robot);
             this.robots.add(robot);
 
@@ -54,8 +55,8 @@ public class World implements Model {
             this.worldObjects.add(stelling);
             this.stellingList.add(stelling);
 
-            robots.get(i).SetDestinationX(grid.positions.get(10).getX());
-            robots.get(i).SetDestinationZ(grid.positions.get(3).getZ());
+            robots.get(i).SetDestinationX(map.storage.get(10).getX());
+            robots.get(i).SetDestinationZ(map.storage.get(1).getZ());
 
         }
 

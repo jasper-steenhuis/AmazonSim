@@ -1,6 +1,9 @@
 package com.nhlstenden.amazonsimulatie.models;
 
 
+import com.nhlstenden.amazonsimulatie.base.Map;
+
+import java.util.Set;
 import java.util.UUID;
 
 /*
@@ -22,15 +25,16 @@ public class Robot implements Object3D, Updatable {
     public double destinationZ = 0;
 
 
-
+    private com.nhlstenden.amazonsimulatie.base.Map map;
     private double rotationX = 0;
     private double rotationY = 0;
     private double rotationZ = 0;
 
 
 
-    public Robot() {
+    public Robot(Map map) {
         this.uuid = UUID.randomUUID();
+        this.map = map;
 
     }
 
@@ -50,7 +54,18 @@ public class Robot implements Object3D, Updatable {
     @Override
     public boolean update() {
         MoveToPosition(destinationX,destinationZ);
+        CheckForCorner();
+
         return true;
+    }
+
+    private void CheckForCorner() {
+        for(int i=0; i <map.storage.size(); i++){
+            if( Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3){
+                SetDestinationZ(map.storage.get(8).getZ());
+            }
+        }
+        //System.out.println(Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)));
     }
 
     @Override
@@ -82,6 +97,8 @@ public class Robot implements Object3D, Updatable {
         if(z > (destinationX * 3) - 1.5){
             z -= 0.1;
         }
+
+
     }
 
     @Override
@@ -127,5 +144,9 @@ public class Robot implements Object3D, Updatable {
     }
     public double getDestinationZ(){
         return destinationZ;
+    }
+
+    public void SetMap(Map map){
+        this.map = map;
     }
 }
