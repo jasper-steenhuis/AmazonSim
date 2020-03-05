@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0079b826-9aab-4e61-ae9d-f6ab33265b40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/CommandCentre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Idle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/base/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/SimulationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/controllers/SimulationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Object3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Object3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/ProxyObject3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/ProxyObject3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Stelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Stelling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/Vrachtwagen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhlstenden/amazonsimulatie/models/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
