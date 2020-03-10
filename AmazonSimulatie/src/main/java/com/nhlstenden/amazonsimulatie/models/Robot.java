@@ -3,6 +3,7 @@ package com.nhlstenden.amazonsimulatie.models;
 
 import com.nhlstenden.amazonsimulatie.base.Map;
 
+import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
@@ -30,6 +31,7 @@ public class Robot implements Object3D, Updatable {
     private double rotationY = 0;
     private double rotationZ = 0;
 
+    Random r = new Random();
 
 
     public Robot(Map map) {
@@ -60,12 +62,13 @@ public class Robot implements Object3D, Updatable {
     }
 
     private void CheckForCorner() {
-        for(int i=0; i <map.storage.size(); i++){
+        /* TODO make sure a robot cannot change it's destinationZ value until destinationX is reached and vice versa */
             if( Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3){
-                SetDestinationZ(map.storage.get(8).getZ());
+                if(Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) < 5){
+                    SetDestinationX(r.nextInt((10-1) + 1) + 1);
+                    SetDestinationZ(r.nextInt((10-1) + 1) + 1);
+                }
             }
-        }
-        //System.out.println(Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)));
     }
 
     @Override
@@ -94,7 +97,7 @@ public class Robot implements Object3D, Updatable {
         if(x > (destinationX * 3) - 1.5){
             x -= 0.1;
         }
-        if(z > (destinationX * 3) - 1.5){
+        if(z > (destinationZ * 3) - 1.5){
             z -= 0.1;
         }
 
