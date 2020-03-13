@@ -2,6 +2,7 @@ package com.nhlstenden.amazonsimulatie.models;
 
 import com.nhlstenden.amazonsimulatie.base.Map;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 
@@ -14,9 +15,9 @@ import java.util.UUID;
 public class Stelling implements Object3D, Updatable {
     private UUID uuid;
 
-    private double x = 0;
+    public double x = 0;
     private double y = 0.01;
-    private double z = 0;
+    public double z = 0;
 
     public double destinationX = x;
     public double destinationZ = z;
@@ -25,9 +26,12 @@ public class Stelling implements Object3D, Updatable {
     private double rotationY = 0;
     private double rotationZ = 0;
 
+    private ArrayList<Robot> robots = new ArrayList<Robot>();
+
     private com.nhlstenden.amazonsimulatie.base.Map map;
-    public Stelling(Map map) {
+    public Stelling(Map map, ArrayList<Robot> robots) {
         this.uuid = UUID.randomUUID();
+        this.robots = robots;
     }
 
 
@@ -39,6 +43,8 @@ public class Stelling implements Object3D, Updatable {
 
         return true;
     }
+
+
 
     @Override
     public String getUUID() {

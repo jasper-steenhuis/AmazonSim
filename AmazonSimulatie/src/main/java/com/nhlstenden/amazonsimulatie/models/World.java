@@ -23,8 +23,8 @@ public class World implements Model {
      * een lijst van Object3D onderdelen. Deze kunnen in principe alles zijn. (Robots, vrachrtwagens, etc)
      */
     private List<Object3D> worldObjects;
-    private List<Robot> robots;
-    private List<Stelling> stellingList;
+    private ArrayList<Robot> robots;
+    private ArrayList<Stelling> stellingList;
     private List<Tile> tiles;
     /*
      * Dit onderdeel is nodig om veranderingen in het model te kunnen doorgeven aan de controller.
@@ -34,10 +34,7 @@ public class World implements Model {
 
     private Idle idle;
 
-    /*
-     * De wereld maakt een lege lijst voor worldObjects aan. Daarin wordt nu één robot gestopt.
-     * Deze methode moet uitgebreid worden zodat alle objecten van de 3D wereld hier worden gemaakt.
-     */
+
     public World() {
         this.worldObjects = new ArrayList<>();
         this.robots = new ArrayList<>();
@@ -46,19 +43,22 @@ public class World implements Model {
         for(int i = 0; i < 6; i++) {
             // Robot
             Robot robot = new Robot(map);
+            com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling(map,robots);
             robot.SetMap(map);
             this.worldObjects.add(robot);
             this.robots.add(robot);
-
-            // Stelling
-            com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling(map);
             this.worldObjects.add(stelling);
             this.stellingList.add(stelling);
-            robots.get(i).childStelling = stellingList.get(i);
-            stellingList.get(i).setX(map.storage.get(5).getX());
-            stellingList.get(i).setZ(map.storage.get(6).getX());
+
+
+            //loopt over lijsten van stellingen en robots heen en zet begin posities en doelen
+            stellingList.get(i).setX((map.storage.get(5).getX() * 3) - 1.5);
+            stellingList.get(i).setZ((map.storage.get(5).getX() * 3) - 1.5);
+            robots.get(i).stellings = stellingList;
+            robots.get(i).assignedStelling = stellingList.get(i);
             robots.get(i).SetDestinationX(map.storage.get(10).getX());
             robots.get(i).SetDestinationZ(map.storage.get(1).getZ());
+
 
         }
 
@@ -77,13 +77,14 @@ public class World implements Model {
     @Override
     public void update() {
         for (Object3D object : this.worldObjects) {
-            if(object instanceof Updatable) {
-                if (((Updatable)object).update()) {
+            if (object instanceof Updatable) {
+                if (((Updatable) object).update()) {
                     pcs.firePropertyChange(Model.UPDATE_COMMAND, null, new ProxyObject3D(object));
                 }
             }
         }
     }
+
     /*
      * Standaardfunctionaliteit. Hoeft niet gewijzigd te worden.
      */
