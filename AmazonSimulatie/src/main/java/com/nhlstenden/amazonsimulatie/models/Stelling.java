@@ -1,5 +1,7 @@
 package com.nhlstenden.amazonsimulatie.models;
 
+import com.nhlstenden.amazonsimulatie.base.Map;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -23,75 +25,18 @@ public class Stelling implements Object3D, Updatable {
     private double rotationY = 0;
     private double rotationZ = 0;
 
-    public int currentPosition = 1;
-    public int destination;
-
-
-
-    public Stelling() {
+    private com.nhlstenden.amazonsimulatie.base.Map map;
+    public Stelling(Map map) {
         this.uuid = UUID.randomUUID();
     }
 
 
 
-    public void MoveTo(){
 
-        if (this.x < x){
-            this.x += 0.1;
-        }
-        if (this.z < z){
-            this.z += 0.1;
-        }
 
-        if (this.x > x){
-            this.x -= 0.1;
-        }
-        if (this.z > z){
-            this.z -= 0.1;
-        }
-
-    }
-
-    public void GoToDestination(int position) {
-        this.destination = position;
-    }
-    public void SetNextPosition(int position){
-        this.currentPosition = position;
-    }
-    public int GetRandomStartPosition(){
-        int[] nums = {101,201,301,401};
-        Random r = new Random();
-        int randomNumber = r.nextInt(nums.length);
-        System.out.println(nums[randomNumber]);
-        return nums[randomNumber];
-    }
-    public void SetPosition(int position) {
-        this.destination = position;
-
-    }
-
-    public int GetPosition(){
-        return this.currentPosition;
-    }
-    public int GetDestination(){
-        return this.destination;
-    }
-    /*
-     * Deze update methode wordt door de World aangeroepen wanneer de
-     * World zelf geupdate wordt. Dit betekent dat elk object, ook deze
-     * robot, in de 3D wereld steeds een beetje tijd krijgt om een update
-     * uit te voeren. In de updatemethode hieronder schrijf je dus de code
-     * die de robot steeds uitvoert (bijvoorbeeld positieveranderingen). Wanneer
-     * de methode true teruggeeft (zoals in het voorbeeld), betekent dit dat
-     * er inderdaad iets veranderd is en dat deze nieuwe informatie naar de views
-     * moet worden gestuurd. Wordt false teruggegeven, dan betekent dit dat er niks
-     * is veranderd, en de informatie hoeft dus niet naar de views te worden gestuurd.
-     * (Omdat de informatie niet veranderd is, is deze dus ook nog steeds hetzelfde als
-     * in de view)
-     */
     @Override
     public boolean update() {
-        this.MoveTo();
+
         return true;
     }
 
@@ -114,6 +59,13 @@ public class Stelling implements Object3D, Updatable {
     @Override
     public double getX() {
         return this.x;
+    }
+
+    public double setX(double x) {
+        return this.x = x;
+    }
+    public double setZ(double z) {
+        return this.z = z;
     }
 
     @Override

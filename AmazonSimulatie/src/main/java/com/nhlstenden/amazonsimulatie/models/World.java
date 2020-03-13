@@ -51,10 +51,12 @@ public class World implements Model {
             this.robots.add(robot);
 
             // Stelling
-            com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling();
+            com.nhlstenden.amazonsimulatie.models.Stelling stelling = new com.nhlstenden.amazonsimulatie.models.Stelling(map);
             this.worldObjects.add(stelling);
             this.stellingList.add(stelling);
-
+            robots.get(i).childStelling = stellingList.get(i);
+            stellingList.get(i).setX(map.storage.get(5).getX());
+            stellingList.get(i).setZ(map.storage.get(6).getX());
             robots.get(i).SetDestinationX(map.storage.get(10).getX());
             robots.get(i).SetDestinationZ(map.storage.get(1).getZ());
 

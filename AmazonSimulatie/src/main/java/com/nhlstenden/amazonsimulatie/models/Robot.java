@@ -25,6 +25,7 @@ public class Robot implements Object3D, Updatable {
     public double destinationX = 0;
     public double destinationZ = 0;
 
+    public Stelling childStelling;
 
     private com.nhlstenden.amazonsimulatie.base.Map map;
     private double rotationX = 0;
@@ -57,18 +58,33 @@ public class Robot implements Object3D, Updatable {
     public boolean update() {
         MoveToPosition(destinationX,destinationZ);
         CheckForCorner();
-
+        CheckForStelling();
         return true;
+    }
+
+    private void CheckForStelling() {
+       if(Math.sqrt(Math.pow((childStelling.getX() * 3) - 1.5 ,2)  - Math.pow(x,2)) < 3){
+           System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+           childStelling.setX(this.x);
+           if (Math.sqrt(Math.pow((childStelling.getZ() * 3) - 1.5,2)  - Math.pow(z,2)) < 5){
+               childStelling.setZ(this.z);
+           }
+       }
     }
 
     private void CheckForCorner() {
         /* TODO make sure a robot cannot change it's destinationZ value until destinationX is reached and vice versa */
-            if( Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3){
-                if(Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) < 5){
-                    SetDestinationX(r.nextInt((10-1) + 1) + 1);
-                    SetDestinationZ(r.nextInt((10-1) + 1) + 1);
-                }
+            if (Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3 && Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) < 5) {
+                SetDestinationZ(r.nextInt((10 - 1) + 1) + 1);
+                SetDestinationX(r.nextInt((10 - 1) + 1) + 1);
             }
+            if (Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) > 3 && Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) < 5) {
+                SetDestinationZ(r.nextInt((10 - 1) + 1) + 1);
+            }
+            if (Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3 && Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) > 5) {
+                SetDestinationX(r.nextInt((10 - 1) + 1) + 1);
+            }
+
     }
 
     @Override
