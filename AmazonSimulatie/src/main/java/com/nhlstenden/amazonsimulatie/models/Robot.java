@@ -3,6 +3,7 @@ package com.nhlstenden.amazonsimulatie.models;
 
 import com.nhlstenden.amazonsimulatie.base.Map;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
@@ -25,7 +26,7 @@ public class Robot implements Object3D, Updatable {
     public double destinationX = 0;
     public double destinationZ = 0;
 
-    public Stelling childStelling;
+    public ArrayList<Stelling> stellings = new ArrayList<Stelling>();
 
     private com.nhlstenden.amazonsimulatie.base.Map map;
     private double rotationX = 0;
@@ -33,12 +34,10 @@ public class Robot implements Object3D, Updatable {
     private double rotationZ = 0;
 
     Random r = new Random();
-
-
+    public Stelling assignedStelling;
     public Robot(Map map) {
         this.uuid = UUID.randomUUID();
         this.map = map;
-
     }
 
     /*
@@ -57,23 +56,27 @@ public class Robot implements Object3D, Updatable {
     @Override
     public boolean update() {
         MoveToPosition(destinationX,destinationZ);
-        CheckForCorner();
-        CheckForStelling();
+        ChangeDirection();
+        GrabStelling();
         return true;
     }
 
-    private void CheckForStelling() {
-       if(Math.sqrt(Math.pow((childStelling.getX() * 3) - 1.5 ,2)  - Math.pow(x,2)) < 3){
-           System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-           childStelling.setX(this.x);
-           if (Math.sqrt(Math.pow((childStelling.getZ() * 3) - 1.5,2)  - Math.pow(z,2)) < 5){
-               childStelling.setZ(this.z);
-           }
-       }
+    /*
+       Deze methode zorgt er voor dat wanneer de afstand tussen een robot en zijn aangewezen stelling dusdanig klein is
+        dat hij de positie van de stelling gelijk maakt aan de robot.
+    */
+    private void GrabStelling() {
+        System.out.println(Math.sqrt(Math.pow(x - z,2) + Math.pow(assignedStelling.getX() - assignedStelling.getZ(), 2)));
+            if (Math.sqrt(Math.pow(x - z,2) + Math.pow(assignedStelling.getX() - assignedStelling.getZ(), 2))< 4    ) {
+                assignedStelling.setX(x);
+                assignedStelling.setZ(z);
+            }
     }
 
-    private void CheckForCorner() {
-        /* TODO make sure a robot cannot change it's destinationZ value until destinationX is reached and vice versa */
+    /*
+    Deze methode laat de robot een willekeurige richting kiezen door de afstand te vergelijken tussen de robot en de X en Z van zijn doel.
+     */
+    private void ChangeDirection() {
             if (Math.sqrt(Math.pow((destinationX * 3) -1.5,2)  - Math.pow(x,2)) < 3 && Math.sqrt(Math.pow((destinationZ * 3) - 1.5,2) - Math.pow(z,2)) < 5) {
                 SetDestinationZ(r.nextInt((10 - 1) + 1) + 1);
                 SetDestinationX(r.nextInt((10 - 1) + 1) + 1);
@@ -102,7 +105,9 @@ public class Robot implements Object3D, Updatable {
          */
         return Robot.class.getSimpleName().toLowerCase();
     }
-
+    /*
+        Deze methode laat de robot bewegen naar een X en Z positie
+    */
     public void MoveToPosition(double destinationX, double destinationZ){
         if(x < (destinationX * 3) - 1.5){
             x += 0.1;
@@ -150,21 +155,27 @@ public class Robot implements Object3D, Updatable {
         return this.rotationZ;
     }
 
-
+    /*
+        Setters
+    */
     public double SetDestinationX(double x){
         return destinationX = x;
     }
     public double SetDestinationZ(double z){
         return destinationZ = z;
     }
-
+    /*
+        Getters
+     */
     public double getDestinationX() {
         return destinationX;
     }
     public double getDestinationZ(){
         return destinationZ;
     }
-
+    /*
+    Setter
+     */
     public void SetMap(Map map){
         this.map = map;
     }

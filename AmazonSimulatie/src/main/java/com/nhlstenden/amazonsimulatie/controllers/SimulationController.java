@@ -32,7 +32,7 @@ public class SimulationController extends Controller {
             this.getModel().update();
 
             try {
-                Thread.sleep(50);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
